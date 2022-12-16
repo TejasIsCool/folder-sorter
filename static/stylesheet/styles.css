@@ -133,3 +133,64 @@ nav {
     font-size: 2vw;
     padding: 1vh 1vw 1vh 1vw;
 }
+
+/* About Us Page */
+
+#about {
+    display: grid;
+    grid-template-columns: 60vw 40vw;
+    background-color: #FAF8F1;
+    padding-top: 3vh;
+}
+
+#about-left-heading {
+    font-size: 5.5vw;
+    font-family: kumbh;
+    color: #221F19;
+    margin: 0;
+    margin-bottom: 2vh;
+    margin-left: 4.5vw;
+}
+
+#demo-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#site-demo {
+    border-style: dotted;
+    width: 50vw;
+    height: 60vh;
+}
+
+#demo-div h3 {
+    font-family: lato;
+    color: #474545;
+}
+
+#about-right {
+    display: flex;
+    background-image: url(/static/imgs/about.png);
+    background-size: cover;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#about-right-heading {
+    position: relative;
+    font-size: 3vw;
+    font-family: kumbh;
+    left: 5vw;
+    margin: 0;
+}
+
+#about-content {
+    position: relative;
+    font-family: montserrat;
+    width: 30vw;
+    font-size: 1.3vw;
+    left: 5vw;
+}
