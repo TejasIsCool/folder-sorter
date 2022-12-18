@@ -1,22 +1,50 @@
-// Function that makes the homepage image slowly disappear as you scroll down, as its a cool effect
+// Events
+document.addEventListener("scroll", (event) => {
+    control_homepage_opacity()
+    control_about_opacity()
+})
+
+
+// https://stackoverflow.com/questions/2387136/cross-browser-method-to-determine-vertical-scroll-percentage-in-javascript
+function getScrollPercent() {
+    var h = document.documentElement, 
+        b = document.body,
+        st = 'scrollTop',
+        sh = 'scrollHeight';
+    return (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+}
+
+// Function that makes the homepage image slowly disappear as you scroll down, as it's a cool effect
 var home_page_image = document.getElementById('homepage-design')
 var home_page_lower_dashboard = document.getElementById("homepage-text-button")
-function make_disappear() {
-    var scroll_length = window.scrollY;
-    // From 400 to 600 scroll_length, we reduce the opacity
-    if (scroll_length > 10) {
-        // Opacity s from 0 to 1, where 0 is invisible, and 1 is full opacity
-        var new_opacity = scale_linearly(
-            scroll_length,
-            400,
-            750,
-            1,
-            0
-        )
-        home_page_image.style.opacity = new_opacity
-        home_page_lower_dashboard.style.opacity = new_opacity
+function control_homepage_opacity() {
+    var scroll_length = getScrollPercent();
+    // From 40 to 65 percent scroll_length, we reduce the opacity
+    // Opacity is from 0 to 1, where 0 is invisible, and 1 is full opacity
+    var new_opacity = scale_linearly(
+        scroll_length,
+        40,
+        65,
+        1,
+        0
+    )
+    home_page_image.style.opacity = new_opacity
+    home_page_lower_dashboard.style.opacity = new_opacity
+}
 
-    }
+var about_page = document.getElementById('about')
+function control_about_opacity() {
+    var scroll_length = getScrollPercent();
+    // From 50 to 75 percent scroll_length, we increase the opacity
+    // Opacity is from 0 to 1, where 0 is invisible, and 1 is full opacity
+    var new_opacity = scale_linearly(
+        scroll_length,
+        50,
+        70,
+        0,
+        1
+    )
+    about_page.style.opacity = new_opacity
 }
 
 
@@ -35,12 +63,19 @@ function scale_linearly(old_value, old_min, old_max, new_min, new_max) {
 }
 
 
+// redirect_to_links can be called, if you want to redirect the user to another website
+urls = {
+    "Tejas_Youtube" : "https://youtube.com/@TejasIsAmazing",
+    "Dashboard": "/dashboard.html"
+}
+function redirect_to_links(which) {
+    url_redirect = urls[which]
+    window.open(url_redirect, '_blank').focus()
+}
+
+
 // TODO
 // This function (tries to) tick every 50 ms .
 function tick() {
     
 }
-
-document.addEventListener("scroll", (event) => {
-    make_disappear()
-})

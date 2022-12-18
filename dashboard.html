@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="/static/script/dashboard.js" defer></script>
+</head>
+<body>
+    <ul>
+        <li></li>
+    </ul>
+    <section id="input">
+        <!-- Just for testing -->
+        Click to input<br>
+        <button id="input-button">Select folder</button>
+        <br>
+        <ul>
+            <li id="Selected-File-Text">Selected Folder: None</li>
+            <li id="File-Count-Text">Files Found In Folder: None</li>
+            <li id="Folder-Count-Text">Folders Found in Folder: None</li>
+        </ul>
+    </section>
+    <section id="options">
+        Options:
+        <div id="options-div">
+            <!-- Everything in this div is extra extra temp -->
+            <div id="sorting-way">
+                <label for="Format">Choose a sorting way</label>
+                <select name="Format" id="format">
+                    <option value="filetype">Filetype</option>
+                    <option value="date">Date</option>
+                    <option value="size">Size</option>
+                    <option value="name">Name</option>
+                </select>
+            </div>
+            <div>
+                <label for="test">Test</label><br>
+                <input type="checkbox" id="test" name="test" value="YOO">
+            </div>
+        </div>
+    </section>
+    <button id="sort-button">Sort!</button>
+</body>
+</html>
