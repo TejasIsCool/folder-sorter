@@ -22,11 +22,21 @@
 
 /* Body */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     width: 100vw;
     margin: 0;
     overflow-x: hidden;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+  }
 
 button:hover {
     cursor: pointer;
@@ -38,6 +48,14 @@ nav {
     width: 100vw;
     display: grid;
     grid-template-columns: 30vw 40vw 30vw;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a:visited {
+    color: #221F19;
 }
 
 #left-nav {
@@ -99,13 +117,14 @@ nav {
     display: grid;
     grid-template-columns: 52vw 48vw;
     margin-top: 5vh;
+    height: 80vh;
 }
 
 #homepage-design {
     position: relative;
     width: 70vw;
     right: 8vw;
-    z-index: -100
+    z-index: -100;
 }
 
 #main-description {
@@ -138,9 +157,12 @@ nav {
 
 #about {
     display: grid;
+    position: relative;
     grid-template-columns: 60vw 40vw;
     background-color: #FAF8F1;
-    padding-top: 3vh;
+    padding-top: 5vh;
+    padding-bottom: 6vh;
+    opacity: 0;
 }
 
 #about-left-heading {
@@ -162,7 +184,7 @@ nav {
 #site-demo {
     border-style: dotted;
     width: 50vw;
-    height: 60vh;
+    height: 50vh;
 }
 
 #demo-div h3 {
@@ -172,11 +194,15 @@ nav {
 
 #about-right {
     display: flex;
+    position: relative;
     background-image: url(/static/imgs/about.png);
-    background-size: cover;
+    background-size: 39vw;
+    background-repeat: no-repeat;
     align-content: center;
     justify-content: center;
     flex-direction: column;
+    right: 3vw;
+    background-position: center;
 }
 
 #about-right-heading {
@@ -193,4 +219,54 @@ nav {
     width: 30vw;
     font-size: 1.3vw;
     left: 5vw;
+}
+
+/* Footer */
+
+#footer {
+    display: flex;
+    position: relative;
+    background-color:rgb(32, 32, 32);
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+#footer div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+#footer h3 {
+    font-size: 1.2vw;
+    font-family: lato;
+    color: rgba(209, 205, 205, 0.721);
+}
+
+#footer ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+#footer li {
+    font-size: 1.2vw;
+    list-style: none;
+    font-family: lato;
+    color: white;
+    margin-bottom: 1vh;
+}
+
+#links-ul li:hover {
+    cursor: pointer;
+}
+
+#links-ul a {
+    text-decoration: none;
+    color: white;
+}
+
+#links-ul a:visited {
+    color: white;
 }

@@ -6,7 +6,8 @@
   "tasks": {
     "preview": {
       "name": "preview",
-      "command": "preview"
+      "command": "preview",
+      "runAtStart": true
     }
   }
 }

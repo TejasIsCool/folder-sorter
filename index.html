@@ -9,17 +9,17 @@
     <script src="/static/script/script.js" defer></script>
 </head>
 <body>
-    <nav>
+    <nav id="navbar">
         <div id="left-nav">
             <h1 id="website-name">Name</h1>
         </div>
         <ul id="middle-nav">
-            <li>HOME</li>
-            <li>ABOUT</li>
+            <li><a href="#homepage">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
             <li>CONTACT</li>
         </ul>
         <div id="right-nav">
-            <button>Dashboard ➜</button>
+            <button onclick="redirect_to_links('Dashboard')">Dashboard ➜</button>
         </div>
     </nav>
     <section id="homepage">
@@ -29,7 +29,7 @@
         <div id="homepage-text">
             <h1 id="main-description">An intuitive file organisation tool.</h1>
             <h3 id="small-description">NAME aims to make sorting out folders and files a hassle-free job.</h3>
-            <button id="homepage-text-button">Dashboard ➜</button>
+            <button id="homepage-text-button" onclick="redirect_to_links('Dashboard')">Dashboard ➜</button>
         </div>
     </section>
     <section id="about">
@@ -47,8 +47,23 @@
             </h3>
         </div>
     </section>
-    <section>
-        
+    <section id="footer">
+        <div id="creator-div">
+            <h3>Creators</h3>
+            <ul id="creator-ul">
+                <li onclick="redirect_to_links('Tejas_Youtube')">TejasIsAmazing</li>
+                <li>pepega8887</li>
+            </ul>
+        </div>
+        <div id="links-div">
+            <h3>Links</h3>
+            <ul id="links-ul">
+                <li><a href="#navbar">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li>Contact</li>
+                <li>Dashboard</li>
+            </ul>
+        </div>
     </section>
 </body>
 </html>
