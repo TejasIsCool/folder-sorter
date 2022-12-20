@@ -1,8 +1,8 @@
-
+/*
 const sorting_method_dropdown = document.getElementById('format')
 
-// Very temporary
-// NEED TO ENABLE "Experimental Web Platform features"
+ Very temporary
+ NEED TO ENABLE "Experimental Web Platform features"
 const sort_button = document.getElementById('sort-button')
 sort_button.addEventListener('click', async () => {
     if (directory_handles != undefined){
@@ -68,4 +68,4 @@ sort_button.addEventListener('click', async () => {
             
         }
     }
-})
+})*/

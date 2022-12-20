@@ -70,8 +70,10 @@
 }
 
 #create-folder-btn {
-    background-image: url(/static/imgs/file-icon.png);
+    background-image: url(/static/imgs/folder-icon.png);
     background-size: 3vw;
     background-repeat: no-repeat;
     background-position: center;
 }
+
+
