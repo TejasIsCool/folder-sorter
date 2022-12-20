@@ -1,5 +1,7 @@
 #warning {
     background-color: white;
+    padding-left: 2vw;
+    padding-right: 2vw;
 }
 
 #warning h3 {
@@ -15,7 +17,7 @@
     text-align: center;
     margin-bottom: 1vh;
     margin-top: 4vh;
-    color: rgb(205, 193, 193)
+    color: rgb(212, 212, 212)
 }
 
 #warning div {

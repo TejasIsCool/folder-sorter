@@ -1,0 +1,109 @@
+#folder-viewer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+    margin-left: 9vw;
+    background-color: #EFEFEF;
+    width: fit-content;
+}
+
+#folder-viewer-title {
+    font-size: 2.5vw;
+    font-family: kumbh;
+    margin-top: 0;
+    margin-bottom: 2vh;
+    color: rgb(0, 0, 0);
+}
+
+#folder-bottom {
+    display: flex;
+    column-gap: 4vh;
+}
+
+#files-and-folders-viewer {
+    width: 42.5vw;
+    background-color: white;
+    border-radius: 5px;
+    height: 55vh;
+}
+
+#files-and-folders-list-content {
+    overflow-y: scroll;
+    height: 48vh;
+}
+
+#files-and-folders-list-content div {
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+}
+
+#files-and-folders-list-content div img {
+    width: 2vw;
+    height: 2vw;
+    margin-right: 1vw;
+}
+
+#files-and-folders-list-content div h3 {
+    font-size: 1.5vw;
+    font-family: Arial;
+}
+
+.folderDiv {
+    transition-duration: 1s;
+}
+
+.folderDiv:hover {
+    background-color:rgb(227, 222, 222);
+    cursor: pointer;
+}
+
+
+.subfolderDiv {
+    transition-duration: 1s;
+}
+
+.subfolderDiv:hover {
+    background-color:rgb(227, 222, 222);
+    cursor: pointer;
+}
+
+.subfolderDiv-back {
+    transition-duration: 1s;
+}
+
+.subfolderDiv-back:hover {
+    background-color:rgb(227, 222, 222);
+    cursor: pointer;
+}
+
+/* Subfolder Viewer */
+
+#subfolder-viewer {
+    width: 42.5vw;
+    background-color: white;
+    border-radius: 5px;
+    height: 55vh;
+}
+
+#files-and-subfolders-list-content {
+    overflow-y: scroll;
+    height: 48vh;
+}
+
+#files-and-subfolders-list-content div {
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+}
+
+#files-and-subfolders-list-content div img {
+    width: 2vw;
+    height: 2vw;
+    margin-right: 1vw;
+}
+
+#files-and-subfolders-list-content div h3 {
+    font-size: 1.5vw;
+    font-family: Arial;
+}
