@@ -1,0 +1,77 @@
+#tools-div-title {
+    display: flex;
+    margin-bottom: 3vh;
+    width: 23vw;
+}
+
+#tool-icon {
+    width: 1.7vw;
+    height: 1.7vw;
+    margin-top: 3vh;
+    margin-left: 0.5vw;
+    opacity: 0.8;
+}
+
+#tools-and-folder-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100vw;
+    gap: 2vw;
+    margin-top: 5vh;
+}
+
+#tools-div, #folder-info-div, #warning {
+    background-color: white;
+    border-radius: 10px;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.tool-button {
+    display: flex;
+    width: 23vw;
+    gap: 1vw;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#tools-div button {
+    width: 4vw;
+    height: 4vw;
+    background-color: #FAEAB1;
+    border: none;
+    margin-left: 10px;
+    padding: 0;
+    border-radius: 3px;
+}
+
+.btn-label {
+    position: relative;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 1.8vw;
+    padding: 0;
+    margin: 0.8vw;
+    right: 1vw;
+}
+
+#create-folder-div {
+    margin-top: 3vh;
+}
+
+#select-folder-btn {
+    background-image: url(/static/imgs/homepage-image.png);
+    background-size: 3vw;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#create-folder-btn {
+    background-image: url(/static/imgs/file-icon.png);
+    background-size: 3vw;
+    background-repeat: no-repeat;
+    background-position: center;
+}
