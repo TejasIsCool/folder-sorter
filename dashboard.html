@@ -5,14 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <script src="/static/script/dashboard.js" defer></script>
+    <script src="/static/script/dashboard/dashboard_input.js" defer></script>
+    <script src="/static/script/dashboard//dashboard_updaters.js" defer></script>
+    <script src="/static/script/dashboard/dashboard_simple_sort.js" defer></script>
+    <link rel="stylesheet" href="/static/stylesheet/dashboard.css">
+    <link rel="stylesheet" href="/static/stylesheet/dashboard/dashboard_tools.css">
+    <link rel="stylesheet" href="/static/stylesheet/dashboard/dashboard_folder_info.css">
+    <link rel="stylesheet" href="/static/stylesheet/dashboard/dashboard_warning.css">
 </head>
 <body>
-    <ul>
-        <li></li>
+    <ul class="white-box" id="navbar">
+        <li><a><img id="home-icon" src="/static/imgs/home.png"></a></li>
     </ul>
+    <section id="tools-info">
+        <div id="welcome-div">
+            <h1 id="main-title">Dashboard</h1>
+            <h3 id="main-subtitle">Welcome</h3>
+        </div>
+        <div id="tools-and-folder-container">
+            <div class="white-box" id="tools-div">
+                <div id="tools-div-title">
+                    <h3 class="div-title">Tools</h3>
+                    <img id="tool-icon" src="/static/imgs/tools.png">
+                </div>
+                <div class="tool-button" id="select-folder-div">
+                    <button name="select-folder-btn" id="select-folder-btn"></button>
+                    <h1 class="btn-label">Select Folder</h1>
+                </div>
+                <div class="tool-button" id="create-folder-div">
+                    <button name="create-folder-btn" id="create-folder-btn"></button>
+                    <h1 class="btn-label">Create Folder</h1>
+                </div>
+            </div>
+            <div class="white-box" id="folder-box">
+                <div id="folder-info-div">
+                    <h3 class="div-title" id="folder-info-div-title">Folder Information</h3>
+                    <h3 class="div-title" id="folder-info-div-title-2">Folder</h3>
+                    <h1 id="folder-title">Folder Name</h1>
+                    <div id="folder-stats-div">
+                        <div id="file-stat" class="file-folder-stats">
+                            <h3 class="div-title" >Files</h3>
+                            <h1>-</h1>
+                        </div>
+                        <div id="folder-stat" class="file-folder-stats">
+                            <h3 class="div-title" >Folders</h3>
+                            <h1>-</h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- This is going to be a list of all files and folders in the selected folder -->
+                <div id="files-and-folders-list">
+                    Files and folders list!<br><br>woo
+                    <br><br>woo
+                    <br><br>woo
+                    <br><br>woo
+                    <br><br>woo
+                    <br><br>woo
+                    <br><br>woo
+                    <br><br>woo
+                </div>
+            </div>
+            <div class="white-box" id="warning">
+                <h1 id="warning-title">WARNING</h1>
+                <h3>To use our features, head to 
+                    <a href="chrome://flags">chrome://flags</a> or the flags page for your browser,
+                    and enable <b>Experimental Web Platform features</b>. 
+                    Also, there's a chance of data loss while moving files, and we aren't liable for it.</h3>
+            </div>
+        </div>
+    </section>
+    <section id="simple-options">
+
+    </section>
+
+    <!---
     <section id="input">
         <!-- Just for testing -->
+        <!---
         Click to input<br>
         <button id="input-button">Select folder</button>
         <br>
@@ -26,6 +95,7 @@
         Options:
         <div id="options-div">
             <!-- Everything in this div is extra extra temp -->
+            <!--
             <div id="sorting-way">
                 <label for="Format">Choose a sorting way</label>
                 <select name="Format" id="format">
@@ -42,5 +112,6 @@
         </div>
     </section>
     <button id="sort-button">Sort!</button>
+-->
 </body>
 </html>

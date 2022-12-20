@@ -1,0 +1,50 @@
+/* Folder information */
+
+#folder-info-div {
+    flex-grow: 0.5;
+    position: relative;
+}
+
+#folder-stats-div {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2vw;
+}
+
+
+.file-folder-stats h1, .file-folder-stats h3{
+    margin-top: 0;
+}
+
+.file-folder-stats h1{
+    text-align: center;
+}
+
+#folder-title {
+    margin-left: 1vw;
+    margin-top: 1%;
+    font-size: 2vw;
+    font-family: Arial;
+}
+
+.scrollable {
+    overflow-y: auto;
+}
+
+/* An ABSOLUTE MESS TRYING TO MAKE A DIV BE BESIDES ANOTHER DIV IN THE SAME FLEXBOX, AND IS ALSO SCROLLABLE*/
+#files-and-folders-list {
+    position: absolute;
+    left: 77%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    background-color: white;
+}
+
+#folder-box {
+    flex-grow: 0.5;
+    display: flex;
+    position: relative;
+    /*align-items: flex-start;*/
+}
