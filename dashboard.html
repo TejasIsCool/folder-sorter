@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <script src="/static/script/dashboard/dashboard_input.js" defer></script>
-    <script src="/static/script/dashboard//dashboard_updaters.js" defer></script>
+    <script src="/static/script/dashboard/dashboard_updaters.js" defer></script>
     <script src="/static/script/dashboard/dashboard_simple_sort.js" defer></script>
+    <script src="/static/script/dashboard/dashboard_subfolder.js" defer></script>
     <link rel="stylesheet" href="/static/stylesheet/dashboard.css">
     <link rel="stylesheet" href="/static/stylesheet/dashboard/dashboard_tools.css">
     <link rel="stylesheet" href="/static/stylesheet/dashboard/dashboard_folder_info.css">
     <link rel="stylesheet" href="/static/stylesheet/dashboard/dashboard_warning.css">
+    <link rel="stylesheet" href="/static/stylesheet/dashboard/dashboard_folder_viewer.css">
 </head>
 <body>
     <ul class="white-box" id="navbar">
@@ -45,24 +47,13 @@
                     <div id="folder-stats-div">
                         <div id="file-stat" class="file-folder-stats">
                             <h3 class="div-title" >Files</h3>
-                            <h1>-</h1>
+                            <h1 id="file-count">-</h1>
                         </div>
                         <div id="folder-stat" class="file-folder-stats">
                             <h3 class="div-title" >Folders</h3>
-                            <h1>-</h1>
+                            <h1 id="folder-count">-</h1>
                         </div>
                     </div>
-                </div>
-                <!-- This is going to be a list of all files and folders in the selected folder -->
-                <div id="files-and-folders-list">
-                    Files and folders list!<br><br>woo
-                    <br><br>woo
-                    <br><br>woo
-                    <br><br>woo
-                    <br><br>woo
-                    <br><br>woo
-                    <br><br>woo
-                    <br><br>woo
                 </div>
             </div>
             <div class="white-box" id="warning">
@@ -74,8 +65,33 @@
             </div>
         </div>
     </section>
-    <section id="simple-options">
-
+    <section id="folder-viewer">
+        <h1 id="folder-viewer-title">Folder Viewer</h1>
+        <div id="folder-bottom">
+            <!-- This is going to be a list of all files and folders in the selected folder -->
+            <div id="files-and-folders-viewer" class="white-box">
+                <div id="current-folder">
+                    <h3 id="current-folder-view-title" class="div-title">Select A Folder</h3>
+                    <div id="files-and-folders-list-content">
+                        <div>
+                            <img src="/static/imgs/folder-icon.png">
+                            <h3>Folder Name</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="subfolder-viewer" class="white-box">
+                <div id="current-subfolder">
+                    <h3 id="current-subfolder-view-title" class="div-title">Select A Folder</h3>
+                    <div id="files-and-subfolders-list-content">
+                        <div>
+                            <img src="/static/imgs/folder-icon.png">
+                            <h3>Subfolder Name</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!---
