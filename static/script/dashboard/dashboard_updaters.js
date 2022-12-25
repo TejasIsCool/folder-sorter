@@ -33,19 +33,27 @@ function update_files_list() {
         // Give divs that display folders a class
         new_folder_div.setAttribute("class", "folderDiv")
         var folder_name_text = document.createElement('h3')
+        folder_name_text.setAttribute("class", "contentRowText folder og")
         folder_name_text.textContent = dir.name
         var folder_icon = document.createElement('img')
         folder_icon.src = "/static/imgs/folder-icon.png";
+        var delete_btn = document.createElement("button");
+        var img_delete_btn = document.createElement("img");
+        img_delete_btn.src = "/static/imgs/trash-can.png";
         
+        delete_btn.appendChild(img_delete_btn);
         new_folder_div.appendChild(folder_icon)
         new_folder_div.appendChild(folder_name_text)
+        new_folder_div.appendChild(delete_btn);
         new_folder_div.classList.add("files-and-folders-list-content-div")
         files_and_folders_list.appendChild(new_folder_div)
     }
 
     for (file of all_files["file"]) {
         var new_div = document.createElement("div")
+        new_div.setAttribute("class", "fileDiv")
         var file_name_text = document.createElement('h3')
+        file_name_text.setAttribute("class", "contentRowText file og")
         file_name_text.textContent = file.name
 
         var file_type = file.name.split('.').at(-1)
@@ -56,10 +64,16 @@ function update_files_list() {
             file_icon.src = "/static/imgs/icons/no_icon.svg"
         }
 
+        var delete_btn = document.createElement("button");
+        var img_delete_btn = document.createElement("img");
+        img_delete_btn.src = "/static/imgs/trash-can.png";
+
         //file_icon.classList.add('files-and-folders-list-content-img')
         
+        delete_btn.appendChild(img_delete_btn);
         new_div.appendChild(file_icon)
         new_div.appendChild(file_name_text)
+        new_div.appendChild(delete_btn);
         new_div.classList.add("files-and-folders-list-content-div")
         files_and_folders_list.appendChild(new_div)
     }
@@ -68,6 +82,5 @@ function update_files_list() {
 function update_view() {
     update_text()
     update_files_list()
-    // In another file
     update_folder_clicks()
 }

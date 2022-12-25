@@ -9,11 +9,13 @@
     <script src="/static/script/dashboard/dashboard_updaters.js" defer></script>
     <script src="/static/script/dashboard/dashboard_simple_sort.js" defer></script>
     <script src="/static/script/dashboard/dashboard_subfolder.js" defer></script>
+    <script src="/static/script/dashboard/dashboard_rename.js" defer></script>
     <link rel="stylesheet" href="/static/stylesheet/dashboard.css">
     <link rel="stylesheet" href="/static/stylesheet/dashboard/dashboard_tools.css">
     <link rel="stylesheet" href="/static/stylesheet/dashboard/dashboard_folder_info.css">
     <link rel="stylesheet" href="/static/stylesheet/dashboard/dashboard_warning.css">
     <link rel="stylesheet" href="/static/stylesheet/dashboard/dashboard_folder_viewer.css">
+    <link rel="stylesheet" href="/static/stylesheet/dashboard/modals.css">
 </head>
 <body>
     <ul class="white-box" id="navbar">
@@ -76,6 +78,7 @@
                         <div>
                             <img src="/static/imgs/folder-icon.png">
                             <h3>Folder Name</h3>
+                            <button id="delete-file"><img src="/static/imgs/trash-can.png"></button>
                         </div>
                     </div>
                 </div>
@@ -87,12 +90,23 @@
                         <div>
                             <img src="/static/imgs/folder-icon.png">
                             <h3>Subfolder Name</h3>
+                            <button id="delete-file"><img src="/static/imgs/trash-can.png"></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <div id="rename-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-rename-modal" class="close">&times;</span>
+            <h1>Rename</h1>
+            <div>
+                <input id="rename-modal-field" type="text">
+                <button id="rename-btn">Go</button>
+            </div>
+        </div>
+    </div>
 
     <!---
     <section id="input">

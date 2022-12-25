@@ -44,9 +44,24 @@
     margin-right: 1vw;
 }
 
-#files-and-folders-list-content div h3 {
+#files-and-folders-list-content div h3, #files-and-subfolders-list-content div h3 {
     font-size: 1.5vw;
     font-family: Arial;
+    width: 15vw;
+    margin-right: 18vw;
+}
+
+.contentRowText:hover {
+    cursor: text;
+}
+
+#files-and-folders-list-content div button, #files-and-subfolders-list-content div button {
+    background-color: #E5BA73;
+    border-radius: 3px;
+    border: none;
+    width: 3vw;
+    margin-right: 0vw;
+    opacity: 1;
 }
 
 .folderDiv {
@@ -57,7 +72,6 @@
     background-color:rgb(227, 222, 222);
     cursor: pointer;
 }
-
 
 .subfolderDiv {
     transition-duration: 1s;
@@ -76,8 +90,6 @@
     background-color:rgb(227, 222, 222);
     cursor: pointer;
 }
-
-/* Subfolder Viewer */
 
 #subfolder-viewer {
     width: 42.5vw;
@@ -101,9 +113,4 @@
     width: 2vw;
     height: 2vw;
     margin-right: 1vw;
-}
-
-#files-and-subfolders-list-content div h3 {
-    font-size: 1.5vw;
-    font-family: Arial;
 }
