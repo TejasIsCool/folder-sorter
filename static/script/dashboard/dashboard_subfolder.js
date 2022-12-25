@@ -1,17 +1,23 @@
-
 function update_folder_clicks() {
       // Elements
       var folders_divs = document.getElementsByClassName("folderDiv");
-
+      var content_row_names = document.getElementsByClassName("contentRowText");
 
       // Functions
       for (var folder_div of folders_divs){
             folder_div.addEventListener('click', async (e) => {
                   await subfolder_updater(e.currentTarget,true);
             });
+            
+      
+      for (var row_text of content_row_names) {
+            row_text.addEventListener('contextmenu', async (e) => {
+                  e.preventDefault();
+                  await rename_item(e.currentTarget);
+            })
+      }
       }
 }
-
 
 async function subfolder_updater(folder_div, from_original) {
       if (from_original) {
@@ -77,6 +83,7 @@ async function update_subfolder_view(subfolder_files_and_folders,sub_folder_name
             new_folder_div.setAttribute("class", "subfolderDiv")
             var folder_name_text = document.createElement('h3')
             folder_name_text.textContent = dir.name
+            folder_name_text.setAttribute("class", "contentRowText folder sub")
             var folder_icon = document.createElement('img')
             folder_icon.src = "/static/imgs/folder-icon.png";
             
@@ -90,6 +97,7 @@ async function update_subfolder_view(subfolder_files_and_folders,sub_folder_name
             var new_div = document.createElement("div")
             var file_name_text = document.createElement('h3')
             file_name_text.textContent = file.name
+            file_name_text.setAttribute("class", "contentRowText file sub")
 
             var file_type = file.name.split('.').at(-1)
             var file_icon = document.createElement('img')
@@ -106,6 +114,7 @@ async function update_subfolder_view(subfolder_files_and_folders,sub_folder_name
             new_div.classList.add("files-and-folders-list-content-div")
             files_and_subfolders_list.appendChild(new_div)
       }
+      update_folder_clicks()
       update_subfolder_clicks()
       update_subfolder_goback_clicks()
 }

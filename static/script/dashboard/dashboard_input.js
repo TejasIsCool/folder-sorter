@@ -7,11 +7,18 @@ var all_files = {
 var current_viewed_folder = directory_handles
 var subfolder_view_path = []
 input_button.addEventListener('click', async () => {
+    console.log("TESTINPUTBUTTONS")
     all_files = {
         "file": [],
         "directory": []
     }
     directory_handles = await window.showDirectoryPicker({mode:"readwrite"});
+    await update_all_files()
+    update_view();
+});
+
+
+async function update_all_files() {
     current_viewed_folder = directory_handles
     subfolder_view_path = [current_viewed_folder]
     for await (thing of directory_handles.values()){
@@ -24,5 +31,4 @@ input_button.addEventListener('click', async () => {
     }
     
     console.log(all_files)
-    update_view();
-});
+}
