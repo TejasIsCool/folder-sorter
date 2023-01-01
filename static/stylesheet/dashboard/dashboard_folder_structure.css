@@ -1,0 +1,47 @@
+#folder-structure {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+    margin-left: 9vw;
+    background-color: #EFEFEF;
+    width: fit-content;
+}
+
+#folder-structure-title {
+    font-size: 2.5vw;
+    font-family: kumbh;
+    margin-top: 0;
+    margin-bottom: 2vh;
+    color: rgb(0, 0, 0);
+}
+
+#folder-structure-outer-area {
+    background-color: white;
+    border-radius: 10px;
+}
+
+#folder-structure-area {
+    display: flex;
+    flex-direction: column;
+    column-gap: 4vh;
+    width: 87vw;
+    background-color: white;
+    border-radius: 10px;
+    height: 55vh;
+    
+}
+
+#folder-structure-templates {
+    padding-top: 1.5vh;
+    padding-left: 1vw;
+    
+    padding-right: 1vw;
+    flex-grow: 0.5;
+    background-color: rgba(138, 138, 138, 25);
+    display: flex;
+    justify-content: flex-end;
+}
+
+#folder-structure-content {
+    flex-grow: 10;
+}
