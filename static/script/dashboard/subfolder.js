@@ -82,14 +82,18 @@ class SubfolderViewManager {
                   // Give divs that display folders a class
                   new_folder_div.setAttribute("class", "subfolderDiv")
                   var folder_name_text = document.createElement('h3')
-                  folder_name_text.textContent = ViewUpdater.folder_title.innerHTML = ViewUpdater.too_long_handler(dir.name, 35);
-                  folder_name_text.setAttribute("class", "contentRowText folder sub")
+                  folder_name_text.textContent = ViewUpdater.too_long_handler(dir.name, 35);
+                  folder_name_text.setAttribute("class", "contentRowText folder sub");
+                  folder_name_text.setAttribute("name", dir.name);
                   var folder_icon = document.createElement('img')
                   folder_icon.src = "/static/imgs/folder-icon.png";
                   var delete_btn = document.createElement("button");
                   var img_delete_btn = document.createElement("img");
                   img_delete_btn.src = "/static/imgs/trash-can.png";
-            
+                  delete_btn.setAttribute("class", "delete_btn");
+                  delete_btn.setAttribute("data-kind", dir.kind);
+                  
+                  delete_btn.setAttribute("name", dir.name)
                   new_folder_div.appendChild(folder_icon)
                   new_folder_div.appendChild(folder_name_text)
                   delete_btn.appendChild(img_delete_btn);
@@ -101,8 +105,9 @@ class SubfolderViewManager {
             for (var file of subfolder_fandf_list["file"]) {
                   var new_div = document.createElement("div")
                   var file_name_text = document.createElement('h3')
-                  file_name_text.textContent = ViewUpdater.folder_title.innerHTML = ViewUpdater.too_long_handler(file.name, 35);
+                  file_name_text.textContent = ViewUpdater.too_long_handler(file.name, 35);
                   file_name_text.setAttribute("class", "contentRowText file sub")
+                  file_name_text.setAttribute("name", file.name);
       
                   var file_type = file.name.split('.').at(-1)
                   var file_icon = document.createElement('img')
@@ -114,6 +119,9 @@ class SubfolderViewManager {
                   var delete_btn = document.createElement("button");
                   var img_delete_btn = document.createElement("img");
                   img_delete_btn.src = "/static/imgs/trash-can.png";
+                  delete_btn.setAttribute("name", file.name)
+                  delete_btn.setAttribute("data-kind", file.kind);
+                  delete_btn.setAttribute("class", "delete_btn");
 
                   new_div.appendChild(file_icon)
                   new_div.appendChild(file_name_text)

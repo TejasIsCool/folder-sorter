@@ -64,11 +64,11 @@
     opacity: 1;
 }
 
-.folderDiv {
+.folderDiv, .fileDiv {
     transition-duration: 1s;
 }
 
-.folderDiv:hover {
+.folderDiv:hover, .fileDiv:hover {
     background-color:rgb(227, 222, 222);
     cursor: pointer;
 }

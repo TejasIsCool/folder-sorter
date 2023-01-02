@@ -19,6 +19,8 @@ class DashboardInput {
             await DashboardInput.update_all_files();
 
             //Updating the view
+            var new_folder_title = GLOBALS.directory_handles.name
+            ViewUpdater.folder_title.innerHTML = ViewUpdater.too_long_handler(new_folder_title, 25)
             ViewUpdater.update_view();
         });
     }
