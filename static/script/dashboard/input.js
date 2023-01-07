@@ -19,6 +19,8 @@ class DashboardInput {
             await DashboardInput.update_all_files();
 
             //Updating the view
+            var new_folder_title = GLOBALS.directory_handles.name
+            ViewUpdater.folder_title.innerHTML = ViewUpdater.too_long_handler(new_folder_title, 25)
             ViewUpdater.update_view();
         });
     }
@@ -35,10 +37,12 @@ class DashboardInput {
         GLOBALS.subfolder_view_path = [GLOBALS.current_viewed_folder]
         // Updating the subfolder view
         SubfolderViewManager.files_and_subfolders_list.innerHTML = `
-            <div class>
-                <img src="/static/imgs/folder-icon.png">
-                <h3>Subfolder</h3>
-            </div>
+        <div id="placeholder-subfolder" class="placeholder-obj">
+            <img class="frontimg" src="/static/imgs/folder-icon.png">
+            <h3>Subfolder Name</h3>
+            <button class="delete-btn placeholder-obj"><img src="/static/imgs/trash-can.png"></button>
+            <button class="info-btn placeholder-obj"><img src="/static/imgs/info.png"></button>
+        </div>
         `
         await DashboardInput.just_update_all_files()
     }

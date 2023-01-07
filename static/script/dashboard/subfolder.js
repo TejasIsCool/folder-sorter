@@ -8,7 +8,7 @@ class SubfolderViewManager {
                   GLOBALS.subfolder_view_path = [GLOBALS.current_viewed_folder]
             }
             // The name of folder, which is stored in the h3 element in the folder_div
-            var folder_name = folder_div.getElementsByTagName('h3')[0].textContent
+            var folder_name = folder_div.getElementsByTagName('h3')[0].getAttribute('name')
             var selected_folder = null
             for await (var thing of GLOBALS.current_viewed_folder.values()){
                   if (thing.kind == "directory" && thing.name == folder_name) {
@@ -33,9 +33,11 @@ class SubfolderViewManager {
                   // Dont wanna show stuff if its the root folder
                   // Cause the other main folder view already does that
                   SubfolderViewManager.files_and_subfolders_list.innerHTML = `
-                  <div class>
-                        <img src="/static/imgs/folder-icon.png">
-                        <h3>Subfolder</h3>
+                  <div id="placeholder-subfolder" class="placeholder-obj">
+                      <img class="frontimg" src="/static/imgs/folder-icon.png">
+                      <h3>Subfolder Name</h3>
+                      <button class="delete-btn placeholder-obj"><img src="/static/imgs/trash-can.png"></button>
+                      <button class="info-btn placeholder-obj"><img src="/static/imgs/info.png"></button>
                   </div>
                   `
             }
@@ -71,7 +73,7 @@ class SubfolderViewManager {
             // The div to click, to go back to the previous folder
             SubfolderViewManager.files_and_subfolders_list.innerHTML = `
             <div class='subfolderDiv-back'>
-                  <img src="/static/imgs/folder-icon.png">
+                  <img class="frontimg" src="/static/imgs/folder-icon.png">
                   <h3>Back from ${subfolder_name}</h3>
             </div>
             `
@@ -82,16 +84,32 @@ class SubfolderViewManager {
                   // Give divs that display folders a class
                   new_folder_div.setAttribute("class", "subfolderDiv")
                   var folder_name_text = document.createElement('h3')
-                  folder_name_text.textContent = ViewUpdater.folder_title.innerHTML = ViewUpdater.too_long_handler(dir.name, 35);
-                  folder_name_text.setAttribute("class", "contentRowText folder sub")
+                  folder_name_text.textContent = ViewUpdater.too_long_handler(dir.name, 35);
+                  folder_name_text.setAttribute("class", "contentRowText folder sub");
+                  folder_name_text.setAttribute("name", dir.name);
                   var folder_icon = document.createElement('img')
                   folder_icon.src = "/static/imgs/folder-icon.png";
+                  folder_icon.setAttribute("class", "frontimg");
                   var delete_btn = document.createElement("button");
                   var img_delete_btn = document.createElement("img");
                   img_delete_btn.src = "/static/imgs/trash-can.png";
-            
+                  delete_btn.setAttribute("class", "delete-btn");
+                  delete_btn.setAttribute("data-kind", dir.kind);
+                  delete_btn.setAttribute("data-og", "!og");
+                  
+                  var info_btn = document.createElement("button");
+                  var img_info_btn = document.createElement("img");
+                  img_info_btn.src = "/static/imgs/info.png";
+                  info_btn.setAttribute("name", dir.name)
+                  info_btn.setAttribute("data-kind", dir.kind);
+                  info_btn.setAttribute("data-og", "og");
+                  info_btn.setAttribute("class", "filelistbtn info-btn");
+                  
+                  delete_btn.setAttribute("name", dir.name)
                   new_folder_div.appendChild(folder_icon)
                   new_folder_div.appendChild(folder_name_text)
+                  info_btn.appendChild(img_info_btn);
+                  new_folder_div.appendChild(info_btn);
                   delete_btn.appendChild(img_delete_btn);
                   new_folder_div.appendChild(delete_btn);
                   new_folder_div.classList.add("files-and-folders-list-content-div")
@@ -101,11 +119,13 @@ class SubfolderViewManager {
             for (var file of subfolder_fandf_list["file"]) {
                   var new_div = document.createElement("div")
                   var file_name_text = document.createElement('h3')
-                  file_name_text.textContent = ViewUpdater.folder_title.innerHTML = ViewUpdater.too_long_handler(file.name, 35);
+                  file_name_text.textContent = ViewUpdater.too_long_handler(file.name, 35);
                   file_name_text.setAttribute("class", "contentRowText file sub")
+                  file_name_text.setAttribute("name", file.name);
       
                   var file_type = file.name.split('.').at(-1)
                   var file_icon = document.createElement('img')
+                  file_icon.setAttribute("class", "frontimg");
                   if (ViewUpdater.available_files.includes(file_type.toLowerCase())){
                   file_icon.src = `/static/imgs/icons/${file_type.toLowerCase()}.svg`
                   } else {
@@ -114,9 +134,23 @@ class SubfolderViewManager {
                   var delete_btn = document.createElement("button");
                   var img_delete_btn = document.createElement("img");
                   img_delete_btn.src = "/static/imgs/trash-can.png";
+                  delete_btn.setAttribute("name", file.name)
+                  delete_btn.setAttribute("data-kind", file.kind);
+                  delete_btn.setAttribute("data-og", "!og");
+                  delete_btn.setAttribute("class", "delete-btn");
+
+                  var info_btn = document.createElement("button");
+                  var img_info_btn = document.createElement("img");
+                  img_info_btn.src = "/static/imgs/info.png";
+                  info_btn.setAttribute("name", file.name)
+                  info_btn.setAttribute("data-kind", file.kind);
+                  info_btn.setAttribute("data-og", "og");
+                  info_btn.setAttribute("class", "filelistbtn info-btn");
 
                   new_div.appendChild(file_icon)
                   new_div.appendChild(file_name_text)
+                  info_btn.appendChild(img_info_btn);
+                  new_div.appendChild(info_btn);
                   delete_btn.appendChild(img_delete_btn);
                   new_div.appendChild(delete_btn);
                   new_div.classList.add("files-and-folders-list-content-div")
@@ -125,6 +159,18 @@ class SubfolderViewManager {
             // update_folder_clicks()
             SubfolderViewManager.update_subfolder_clicks()
             SubfolderViewManager.update_subfolder_goback_clicks()
+
+            if (subfolder_fandf_list['file'].length == 0 && subfolder_fandf_list['directory'].length == 0) {
+                  SubfolderViewManager.files_and_subfolders_list.innerHTML = `
+                  <div id="placeholder-subfolder" class="placeholder-obj">
+                        <img src="/static/imgs/folder-icon.png">
+                        <h3>Subfolder Name</h3>
+                        <button class="delete-btn placeholder-obj">
+                        <img src="/static/imgs/trash-can.png"></button>
+                  </div>
+                  `
+            }
+
       }
 
       // For every subfolder of the folder, we want it to be able to also show its content
@@ -166,9 +212,11 @@ class SubfolderViewManager {
                         // Dont wanna show stuff if its the root folder
                         // Cause the other main folder view already does that
                         SubfolderViewManager.files_and_subfolders_list.innerHTML = `
-                        <div class>
-                              <img src="/static/imgs/folder-icon.png">
-                              <h3>Subfolder</h3>
+                        <div id="placeholder-subfolder" class="placeholder-obj">
+                              <img class="frontimg" src="/static/imgs/folder-icon.png">
+                              <h3>Subfolder Name</h3>
+                              <button class="delete-btn placeholder-obj"><img src="/static/imgs/trash-can.png"></button>
+                              <button class="info-btn placeholder-obj"><img src="/static/imgs/info.png"></button>
                         </div>
                         `
                         var subfolder_path_view = document.getElementById('current-subfolder-view-title')

@@ -38,7 +38,7 @@
     padding-left: 1vw;
 }
 
-#files-and-folders-list-content div img {
+.frontimg, .subfolderDiv-back img {
     width: 2vw;
     height: 2vw;
     margin-right: 1vw;
@@ -55,8 +55,8 @@
     cursor: text;
 }
 
-#files-and-folders-list-content div button, #files-and-subfolders-list-content div button {
-    background-color: #E5BA73;
+.delete-btn, .info-btn {
+    background-color: rgba(229, 185, 115, 0);
     border-radius: 3px;
     border: none;
     width: 3vw;
@@ -64,11 +64,28 @@
     opacity: 1;
 }
 
-.folderDiv {
+.delete-btn img, .info-btn img {
+    width: 1.5vw;
+    height: 2.8vh;
+    margin-right: 0.6vw;
+}
+
+.placeholder-obj, .placeholder-obj:hover {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.placeholder-obj img {
+    width: 2vw;
+    height: 2vw;
+    margin-right: 1vw;
+}
+
+.folderDiv, .fileDiv {
     transition-duration: 1s;
 }
 
-.folderDiv:hover {
+.folderDiv:hover, .fileDiv:hover {
     background-color:rgb(227, 222, 222);
     cursor: pointer;
 }
@@ -109,8 +126,3 @@
     padding-left: 1vw;
 }
 
-#files-and-subfolders-list-content div img {
-    width: 2vw;
-    height: 2vw;
-    margin-right: 1vw;
-}
