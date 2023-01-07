@@ -1,3 +1,4 @@
+/* Rename Modal : */
 .modal {
     display: none;
     position: fixed; 
@@ -10,7 +11,7 @@
     background-color: rgba(0,0,0,0.4);
 }
 
-.modal-content {
+#rename-content {
     background-color: #fefefe;
     margin: 35vh auto;
     padding: 20px;
@@ -19,7 +20,7 @@
     border-radius: 5px;
 }
 
-.modal-content div {
+#rename-content div {
     display: flex;
 }
 
@@ -55,4 +56,14 @@
 
 #rename-btn:hover {
     cursor: pointer;
+}
+
+/* Info Modal */
+#info-content {
+    background-color: #fefefe;
+    margin: 35vh auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30vw; 
+    border-radius: 5px;
 }

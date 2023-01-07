@@ -114,6 +114,7 @@ class RenameItems {
         }
         // Else we navigate to the current folder we are on
         
+        
     }
 
 }

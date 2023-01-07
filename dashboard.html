@@ -12,6 +12,13 @@
     <script src="/static/script/dashboard/subfolder.js" defer></script>
     <script src="/static/script/dashboard/rename.js" defer></script>
     <script src="/static/script/dashboard/runner.js" defer></script>
+    <script src="/static/script/dashboard/delete.js" defer></script>
+    <script src="/static/script/dashboard/info.js" defer></script>
+
+    <script src="/static/script/dashboard/structure/Structure.js" defer></script>
+    <script src="/static/script/dashboard/structure/Manager.js" defer></script>
+
+
     <link rel="stylesheet" href="/static/stylesheet/dashboard.css">
     <link rel="stylesheet" href="/static/stylesheet/dashboard/dashboard_tools.css">
     <link rel="stylesheet" href="/static/stylesheet/dashboard/dashboard_folder_info.css">
@@ -78,10 +85,11 @@
                 <div id="current-folder">
                     <h3 id="current-folder-view-title" class="div-title">Select A Folder</h3>
                     <div id="files-and-folders-list-content">
-                        <div>
-                            <img src="/static/imgs/folder-icon.png">
+                        <div id="placeholder-folder" class="placeholder-obj">
+                            <img class="frontimg" src="/static/imgs/folder-icon.png">
                             <h3>Folder Name</h3>
-                            <button id="delete-file"><img src="/static/imgs/trash-can.png"></button>
+                            <button class="info-btn placeholder-obj"><img src="/static/imgs/info.png"></button>
+                            <button class="delete-btn placeholder-obj"><img src="/static/imgs/trash-can.png"></button>
                         </div>
                     </div>
                 </div>
@@ -90,10 +98,11 @@
                 <div id="current-subfolder">
                     <h3 id="current-subfolder-view-title" class="div-title">Select A Folder</h3>
                     <div id="files-and-subfolders-list-content">
-                        <div>
-                            <img src="/static/imgs/folder-icon.png">
+                        <div id="placeholder-subfolder" class="placeholder-obj">
+                            <img class="frontimg" src="/static/imgs/folder-icon.png">
                             <h3>Subfolder Name</h3>
-                            <button id="delete-file"><img src="/static/imgs/trash-can.png"></button>
+                            <button class="info-btn placeholder-obj"><img src="/static/imgs/info.png"></button>
+                            <button class="delete-btn placeholder-obj"><img src="/static/imgs/trash-can.png"></button>
                         </div>
                     </div>
                 </div>
@@ -126,12 +135,40 @@
 
 
     <div id="rename-modal" class="modal">
-        <div class="modal-content">
+        <div id="rename-content">
             <span id="close-rename-modal" class="close">&times;</span>
             <h1>Rename</h1>
             <div>
                 <input id="rename-modal-field" type="text">
                 <button id="rename-btn">Go</button>
+            </div>
+        </div>
+    </div>
+    <div id="info-modal" class="modal">
+        <div id="info-content">
+            <span id="close-info-modal" class="close">&times;</span>
+            <h1>Selected Object Information</h1>
+            <div id="obj-info">
+                <div>
+                    <h3 class="obj-text" id="obj-name">Name:</h3>
+                    <h4 class="obj-content"></h4>
+                </div>
+                <div>
+                    <h3 class="obj-text" id="obj-kind">Name:</h3>
+                    <h4 class="obj-content"></h4>
+                </div>
+                <div>
+                    <h3 class="obj-text" id="obj-size">Size:</h3>
+                    <h4 class="obj-content"></h4>
+                </div>
+                <div>
+                    <h3 class="obj-text" id="obj-folders">Name:</h3>
+                    <h4 class="obj-content"></h4>
+                </div>
+                <div>
+                    <h3 class="obj-text" id="obj-files">Name:</h3>
+                    <h4 class="obj-content"></h4>
+                </div>
             </div>
         </div>
     </div>
