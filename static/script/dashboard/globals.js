@@ -6,7 +6,9 @@ class GlobalVariables {
 
         // Stores the list of all files and folders of the selected folder
         this.all_files = {
+            /**@type {FileSystemFileHandle[]}*/
             "file": [],
+            /**@type {FileSystemDirectoryHandle[]}*/
             "directory": []
         }
 
