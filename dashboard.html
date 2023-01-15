@@ -11,12 +11,14 @@
     <script src="/static/script/dashboard/dashboard_simple_sort.js" defer></script>
     <script src="/static/script/dashboard/subfolder.js" defer></script>
     <script src="/static/script/dashboard/rename.js" defer></script>
-    <script src="/static/script/dashboard/runner.js" defer></script>
+    
     <script src="/static/script/dashboard/delete.js" defer></script>
     <script src="/static/script/dashboard/info.js" defer></script>
 
     <script src="/static/script/dashboard/structure/Structure.js" defer></script>
     <script src="/static/script/dashboard/structure/Manager.js" defer></script>
+
+    <script src="/static/script/dashboard/runner.js" defer></script>
 
 
     <link rel="stylesheet" href="/static/stylesheet/dashboard.css">
@@ -26,6 +28,8 @@
     <link rel="stylesheet" href="/static/stylesheet/dashboard/dashboard_folder_viewer.css">
     <link rel="stylesheet" href="/static//stylesheet/dashboard/dashboard_folder_structure.css">
     <link rel="stylesheet" href="/static/stylesheet/dashboard/modals.css">
+
+    
 </head>
 <body>
     <ul class="white-box" id="navbar">
@@ -169,6 +173,16 @@
                     <h3 class="obj-text" id="obj-files">Name:</h3>
                     <h4 class="obj-content"></h4>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div id="create-modal" class="modal">
+        <div id="create-content">
+            <span id="close-create-modal" class="close">&times;</span>
+            <h1>Name the new folder</h1>
+            <div>
+                <input id="create-modal-field" type="text">
+                <button id="create-btn">Go</button>
             </div>
         </div>
     </div>

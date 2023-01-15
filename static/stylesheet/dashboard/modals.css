@@ -67,3 +67,26 @@
     width: 30vw; 
     border-radius: 5px;
 }
+
+
+
+/* Create folder modal */ 
+#create-content {
+    background-color: #fefefe;
+    margin: 35vh auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30vw; 
+    border-radius: 5px;
+}
+
+
+#create-btn {
+    margin-left: 1vw;
+    font-size: 1.5vw;
+    
+} 
+
+#create-btn:hover {
+    cursor: pointer;
+}

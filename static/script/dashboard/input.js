@@ -22,6 +22,10 @@ class DashboardInput {
             var new_folder_title = GLOBALS.directory_handles.name
             ViewUpdater.folder_title.innerHTML = ViewUpdater.too_long_handler(new_folder_title, 25)
             ViewUpdater.update_view();
+
+            // Making a new structure, as we dont want to have connections with the previous one
+            Struct_Manager.instantiate_structure()
+            Structure_View_Manager.update_structure_view()
         });
     }
     

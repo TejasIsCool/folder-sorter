@@ -11,3 +11,5 @@ DashboardInput.handle_input()
 
 //// Handling the modal
 RenameItems.handle_modal()
+
+Structure_Modals_Handler.load_modals()
