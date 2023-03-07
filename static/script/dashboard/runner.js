@@ -13,3 +13,7 @@ DashboardInput.handle_input()
 RenameItems.handle_modal()
 
 Structure_Modals_Handler.load_modals()
+
+
+// Loading all the options classes
+options_loader()
